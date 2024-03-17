@@ -1,3 +1,6 @@
+- LEVANTAR LOS SERVICIOS (tanto el frontend como los backend):
+sudo docker-copose up
+
 - MANDAR SOLICITUDES HTTP: 
 ./load_test.sh
 
@@ -13,5 +16,3 @@ server web3 server3:80 check
 
 - ELIMINAR UN BACKEND:
 Lo mismo que lo de arriba pero borrando la ultima línea de haproxy.cfg
-
-
