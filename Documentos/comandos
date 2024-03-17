@@ -1,0 +1,17 @@
+- MANDAR SOLICITUDES HTTP: 
+./load_test.sh
+
+- VER LOS LOGS:
+sudo docker logs -f <nombre_del_contenedor_haproxy>
+
+- CAMBIAR EL MODELO BALANCEO DE CARGA:
+Cambira la linea de "haproxy.cfg" -> "balance roundrobin" o "balance leastconn"
+
+- AÑADIR UN BACKEND:
+Añadir esta línea al final de haproxy.cfg y una ver gardado restablecer el servicio haproxy ("sudo docker-compose restart haproxy")
+server web3 server3:80 check
+
+- ELIMINAR UN BACKEND:
+Lo mismo que lo de arriba pero borrando la ultima línea de haproxy.cfg
+
+
