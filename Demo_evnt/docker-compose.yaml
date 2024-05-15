@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  haproxy:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    restart: always
+
+  server1:
+    image: httpd:latest
+    container_name: server1
+    ports:
+      - "8001:80"
+    restart: always
+
+  server2:
+    image: httpd:latest
+    container_name: server2
+    ports:
+      - "8002:80"
+    restart: always
+    
+  server3:
+    image: httpd:latest
+    container_name: server3
+    ports:
+      - "8003:80"
+    restart: always
